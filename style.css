@@ -1,0 +1,231 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/*--------------------Fonts--------------------*/
+.lilita-one-regular {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body{
+  background-image: url(src/checkbg.png);
+  background-repeat: no-repeat;
+  background-position: center center cover;
+  /* background-size: cover; */
+   
+}
+/*
+  Minimum size: 1.5rem (24px)
+  Preferred size: 5vw (5% of viewport width)
+  Maximum size: 3rem (48px)
+*/
+.game-title{
+  font-family:"Lilita One", sans-serif ;
+  font-size: clamp(2.5rem,12vw,7rem);
+  text-align: center;
+  color: #462718;
+  transition: text-shadow 0.3s ease ;
+}
+.game-title:hover{
+text-shadow: 2px 2px 20px rgb(100, 18, 18);
+}
+
+/* ----------------main--------------------- */
+.main{
+  border: 4px solid rgb(93, 29, 12);
+  border-radius: 22px;
+  max-width:80vw ;
+  min-height: 500px;
+  margin: auto;
+  margin-top: 30px;
+  padding: 15px;
+ 
+  display: flex;
+  flex-direction: column;
+}
+
+.word-hint-area{
+height: auto;
+padding: 5px;
+text-align: center;
+/* border: 2px solid rebeccapurple; */
+ font-family: "Poppins", sans-serif;
+}
+.word-hint-area h2{
+  display: inline;
+}
+.word-hint-area span{
+  padding-left: 10px;
+}
+.live-message{
+  display: block;
+  text-align: center;
+  margin: 15px;
+  margin-top: 3rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+}
+.word-guess-area{
+  display: flex;
+  /* gap: 4rem; */
+  text-transform: uppercase;
+  font-size: clamp(1.5rem,10vw,6rem);
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  justify-content: space-around;
+  /* margin-top: 25px; */
+
+}
+.letter-segment{
+  min-width: 75px;
+  min-height: 121px;
+  border-bottom: 12px solid brown;
+  border-radius: 12px;
+  padding: 0 10px 0 10px;
+  transition: 0.25s all ease;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  /* animation-name: float; */
+  animation: float 3s infinite ease-in-out;
+}
+@keyframes float {
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-20px);
+  }
+  100%{
+    transform: translateY(0px);
+
+  }
+}
+.letter-segment:hover{
+  transform: translateY(-6px);
+  cursor:pointer;
+}
+
+/* correct and wrong  */
+.correct{
+  border-color: rgb(24, 144, 0);
+}
+.wrong{
+  border-color: rgb(239, 0, 48);
+
+}
+.start-btn{
+ display: flex;
+ margin: auto;
+
+}
+#start{
+font-family: "Lilita One", sans-serif;
+font-weight: 400;   
+font-size: 3rem;
+padding: 1.5rem;
+padding-left: 7rem;
+padding-right: 7rem;
+border-radius: 25px;
+background:#5d2c14 ;
+color:antiquewhite;
+letter-spacing: 4px;
+border: 2px solid #5d2c14 ;
+transition: 0.3s all ease;
+  
+}
+#start:hover{
+border:8px solid rgb(44, 5, 5) ;
+cursor: pointer;
+box-shadow: 4px 4px 20px rgb(60, 13, 13);
+font-size: 3.2rem;
+}
+.reveal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 12px;
+}
+#show{
+  font-family: "Poppins", sans-serif;
+  background:#5d2c14 ;
+color:antiquewhite;
+border: 2px solid #5d2c14 ;
+padding: 2px 6px;
+border-radius: 12px;
+margin: auto;
+
+}
+#answer{
+    font-family: "Poppins", sans-serif;
+   font-weight: 600;
+  width: 50px;
+  height: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: auto;
+  
+}
+
+@media screen and (max-width : 540px) {
+  #start{
+    padding: 0.8rem 2rem;
+    font-size: 1.6rem;
+  }
+  #start:hover{
+    font-size: 1.6rem;
+  }
+  .letter-segment{
+    min-width: 35px;
+     min-height: 60px;
+      border-bottom: 6px solid brown;
+  border-radius: 6px;
+  padding: 0 10px 0 10px;
+transition: 0.25s all ease;
+margin: 0 4px;
+  }
+  /* correct and wrong  */
+.correct{
+  border-color: rgb(24, 144, 0);
+}
+.wrong{
+  border-color: rgb(239, 0, 48);
+
+}
+}
+
+#hiddenInput{
+ opacity: 0;
+ position: absolute; 
+ pointer-events: none;
+}
+#mobileKeyboard{
+  display: none;
+ background:#5d2c14 ;
+ color:antiquewhite;
+border: 2px solid #5d2c14 ;
+padding: 6px 6px;
+padding-bottom: 8px;
+font-size: 20px;
+border-radius: 25px;
+margin:15px auto;
+position: fixed;
+bottom: 20px;
+right: 20px;
+ box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+}
+@media (max-width: 768px) {
+  #mobileKeyboard {
+    display: flex;
+  }
+}
