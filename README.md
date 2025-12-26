@@ -2,6 +2,7 @@
 
 A simple and fun **Word Guess Game** built using HTML, CSS, and JavaScript.  
 Guess the hidden word within limited attempts and test your vocabulary and logic!
+Play the game using the following link address : https://heyshiivam556.github.io/WORD-game/
 
 ---
 
